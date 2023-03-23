@@ -1,10 +1,9 @@
 fileFormatVersion: 2
-guid: e964091cafd148442a9eb233c585c5ca
+guid: f64733f10531594478b1ce7e2514d578
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences:
-  - obsttaclePrefab: {fileID: 5020564706658224144, guid: 35ac5b87887217d4f9fc28d8dd0e2908, type: 3}
+  defaultReferences: []
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
