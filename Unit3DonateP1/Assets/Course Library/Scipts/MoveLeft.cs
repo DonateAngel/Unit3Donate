@@ -22,7 +22,7 @@ public class MoveLeft : MonoBehaviour
         {
             if (playerControllerScript.doubleSpeed)
             {
-                transform.Translate(Vector3.Left * Time.deltaTime * (speed * 2));
+                transform.Translate(Vector3.left * Time.deltaTime * (speed * 2));
 
             }
             else
@@ -30,8 +30,9 @@ public class MoveLeft : MonoBehaviour
                 transform.Translate(Vector3.left * Time.deltaTime * speed);
             }
         }
-       if (transform.position.x < leftBound && gameObject.CompareTag("Obstacle"))
-       {
-                Destroy(gameObject);
-       }
+        if (transform.position.x < leftBound && gameObject.CompareTag("Obstacle"))
+        {
+            Destroy(gameObject);
+        }
     }
+}

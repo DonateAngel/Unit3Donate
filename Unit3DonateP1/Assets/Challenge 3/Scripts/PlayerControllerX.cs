@@ -21,11 +21,13 @@ public class PlayerControllerX : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        playerRb = GetComponent<Rigidbody>();
         Physics.gravity *= gravityModifier;
+        
         playerAudio = GetComponent<AudioSource>();
-
+       
         // Apply a small upward force at the start of the game
-        playerRb.AddForce(Vector3.up * 5, ForceMode.Impulse);
+       
 
     }
 
@@ -39,24 +41,24 @@ public class PlayerControllerX : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision other)
+    private void OnCollisionEnter(Collision collision)
     {
         // if player collides with bomb, explode and set gameOver to true
-        if (other.gameObject.CompareTag("Bomb"))
+        if (collision.gameObject.CompareTag("Bomb") && !gameOver)
         {
             explosionParticle.Play();
             playerAudio.PlayOneShot(explodeSound, 1.0f);
             gameOver = true;
             Debug.Log("Game Over!");
-            Destroy(other.gameObject);
+            Destroy(gameObject);
         } 
 
         // if player collides with money, fireworks
-        else if (other.gameObject.CompareTag("Money"))
+        else if (collision.gameObject.CompareTag("Money"))
         {
             fireworksParticle.Play();
             playerAudio.PlayOneShot(moneySound, 1.0f);
-            Destroy(other.gameObject);
+            Destroy(gameObject);
 
         }
 

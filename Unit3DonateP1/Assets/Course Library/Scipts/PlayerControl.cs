@@ -18,7 +18,7 @@ public class PlayerControl : MonoBehaviour
     private AudioSource playerAudio;
     public bool doubleJumpUsed = false;
     public float doubleJumpForce;
-    public bool dounleSpeed = false;
+    public bool doubleSpeed = false;
     
     void Start()
     {
